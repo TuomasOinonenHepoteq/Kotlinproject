@@ -18,7 +18,7 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-jobs:
-  - job: ParallelTesting
-    strategy:
-      parallel: 2
+  jobs:
+    - job: ParallelTesting
+      strategy:
+        parallel: 2
