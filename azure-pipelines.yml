@@ -23,6 +23,6 @@ steps:
   # Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
 - task: CmdLine@2
   inputs:
-    script: gradlew test
+    script: ./gradlew test
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
