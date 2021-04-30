@@ -9,8 +9,12 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-jobs:
-  - job: ParallelTesting
-    strategy:
-      parallel: 2
-
+steps:
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleDebug'
