@@ -26,3 +26,9 @@ steps:
     script: ./gradlew test
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
+
+- task: CmdLine@2
+  inputs:
+    script: ./adb shell am instrument -w -m -e debug false -e class 'com.hepoteq.kotlinproject.ExampleInstrumentedTest' com.hepoteq.kotlinproject.test/androidx.test.runner.AndroidJUnitRunner
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
